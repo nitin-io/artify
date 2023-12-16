@@ -1,7 +1,6 @@
 const galleryDiv = document.querySelector(".gallery");
 
 export const renderGallery = (photos) => {
-  console.log(photos[0]);
   galleryDiv.innerHTML = photos
     .map(
       (photo) =>
