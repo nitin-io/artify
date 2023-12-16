@@ -1,8 +1,11 @@
-import { getImages } from "./services/unsplash";
+import { getImages, getSinglePhoto } from "./services/unsplash";
 import { renderGallery } from "./view/gallery";
 
 const catNavigationList = document.querySelector(".nav-list");
 const galleryDiv = document.querySelector(".gallery");
+const popUpModal = document.querySelector("dialog");
+const modalOpenBtn = document.querySelector("[data-open-modal]");
+const modalCloseBtn = document.querySelector("[data-close-modal]");
 
 renderGallery(await getImages());
 
@@ -15,5 +18,13 @@ catNavigationList.addEventListener("click", (evt) => {
 });
 
 galleryDiv.addEventListener("click", (evt) => {
-  console.log(evt.target);
+  if (evt.target.className === "gallery-img") {
+    popUpModal.showModal();
+    console.log(getSinglePhoto(evt.target.dataset.id));
+    console.dir(popUpModal);
+  }
+});
+
+modalCloseBtn.addEventListener("click", () => {
+  popUpModal.close();
 });
