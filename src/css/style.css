@@ -10,16 +10,69 @@ body {
   padding: 0px;
 }
 
-#main {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-}
-
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  margin: 0.2rem;
+  color: black;
+  padding: 6px 18px;
+  border-radius: 2rem;
+}
+
+.nav-link:hover {
+  transform: scale(0.5);
+  background-color: #ccc;
+}
+
+.show-menu-btn {
+  display: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 98%;
+  margin: auto;
+}
+
+.gallery img {
+  border-radius: 0.5rem;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+  transition: all 200ms;
+}
+
+@media (width <= 500px) {
+  nav ul {
+    display: none;
+  }
+
+  .show-menu-btn {
+    display: block;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }

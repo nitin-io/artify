@@ -1,7 +1,9 @@
 import { createApi } from "unsplash-js";
 
+const accessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+
 const unsplash = createApi({
-  accessKey: "",
+  accessKey,
 });
 
 export const getImages = async (category = "Classic Art", page = 1) => {
@@ -18,3 +20,5 @@ export const getImages = async (category = "Classic Art", page = 1) => {
 
   throw new Error("Something is wrong with unsplash API");
 };
+
+export const getSinglePhoto = (id) => {};

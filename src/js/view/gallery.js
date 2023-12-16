@@ -1,7 +1,11 @@
-const mainDiv = document.getElementById("main");
+const galleryDiv = document.querySelector(".gallery");
 
 export const renderGallery = (photos) => {
-  mainDiv.innerHTML = photos
-    .map((photo) => `<img src=${photo.urls.small} />`)
+  console.log(photos[0]);
+  galleryDiv.innerHTML = photos
+    .map(
+      (photo) =>
+        `<img class="gallery-img" src=${photo.urls.small} alt="${photo.alt_description}" data-id=${photo.id}/>`
+    )
     .join("");
 };
