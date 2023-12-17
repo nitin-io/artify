@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your JavaScript Playground</title>
+    <title>Artify</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -14,63 +14,15 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="main">
-      <nav class="nav-bar">
-        <h2 class="nav-brand brand-font">Artify</h2>
-        <ul class="nav-list">
-          <li>
-            <a href="#" class="nav-link" data-cat="Modern Art">Modern Art</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link" data-cat="Classic">Classic</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link" data-cat="Sculpture">Sculpture</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link" data-cat="Cubism">Cubism</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link" data-cat="Abstract Art"
-              >Abstract Art</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="#" class="fav-logo nav-link"
-              ><i class="fa-regular fa-heart"></i> Favorite</a
-            >
-          </li>
-        </ul>
-        <button class="show-menu-btn">Show Menu</button>
-      </nav>
-      <section id="home">
-        <h1>Welcome To <span class="brand-font">Artify</span></h1>
-        <p>Artifacts: A journey through time without leaving the present.</p>
-      </section>
-      <div class="gallery"></div>
-    </div>
+    <div id="main"></div>
 
     <dialog>
       <button class="close-btn" data-close-modal>
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="dialog-box">
-        <img
-          src="https://images.unsplash.com/photo-1583119912267-cc97c911e416?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NDEzMjh8MHwxfHNlYXJjaHwxfHxDbGFzc2ljJTIwQXJ0fGVufDB8MHx8fDE3MDI2ODU1Nzh8MA&ixlib=rb-4.0.3&q=80&w=1080"
-          alt="dialog"
-        />
-        <div class="details">
-          <h4>
-            The River Severn at Shrewsbury, Shropshire, 1770 by Paul Sandby
-          </h4>
-          <ul>
-            <li>Painting</li>
-            <li>Renaissance</li>
-            <li>Human</li>
-          </ul>
-        </div>
-      </div>
+      <div class="dialog-box"></div>
     </dialog>
+    <div class="notifications"></div>
     <script type="module" src="js/index.js"></script>
   </body>
 </html>

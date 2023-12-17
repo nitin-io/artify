@@ -8,7 +8,12 @@ export const renderDetails = (data) => {
         alt="${data.alt_description}"
     />
   <div class="details">
-    ${data.description ? `<h4>${data.description}</h4>` : ""}
+  ${
+    data.description
+      ? `<h4>${data.description}</h4>`
+      : "<h4 class='error'>No Description Available</h4>"
+  }
+    <span class="title">Tags</span>
     <ul>
       ${tags}
     </ul>
