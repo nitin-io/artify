@@ -37,6 +37,11 @@ const renderFavorites = (favorites) => {
 
   const homeBtn = document.getElementById("home-btn");
   const favoritesDiv = document.querySelector(".favorites");
+  const logoBtn = document.getElementById("logo-btn");
+
+  logoBtn.addEventListener("click", () => {
+    location.reload();
+  });
 
   homeBtn.addEventListener("click", async (evt) => {
     renderGallery(await getImages());

@@ -60,6 +60,11 @@ export const renderGallery = async (photos) => {
   const notificationDiv = document.querySelector(".notifications");
   const favBtn = document.querySelector(".fav-logo");
   const popUpModal = document.querySelector("dialog");
+  const logoBtn = document.getElementById("logo-btn");
+
+  logoBtn.addEventListener("click", () => {
+    location.reload();
+  });
 
   // Function to execute when any category get clicked
   const changeCategory = async (category) => {
@@ -77,10 +82,6 @@ export const renderGallery = async (photos) => {
       evt.target.classList.add("selected");
     }
   });
-  //   const home = document.querySelector("#home");
-
-  //   console.log(await randomPhoto());
-  //   home.style.background = `url(${(await randomPhoto()).url})`;
 
   // Event Listener to fetch data from unsplash and load details modal
   galleryDiv.addEventListener("click", async (evt) => {
