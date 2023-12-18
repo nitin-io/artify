@@ -3,6 +3,7 @@ import { renderGallery } from "./view/gallery";
 
 const popUpModal = document.querySelector("dialog");
 const modalCloseBtn = document.querySelector("[data-close-modal]");
+const logoBtn = document.getElementById("logo-btn");
 
 // Rendering Gallery
 renderGallery(await getImages());

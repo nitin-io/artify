@@ -51,10 +51,6 @@ nav ul {
   background-color: #8f8f8f99;
 }
 
-.show-menu-btn {
-  display: none;
-}
-
 #home {
   height: 50vh;
   display: grid;
@@ -117,6 +113,12 @@ nav ul {
   cursor: pointer;
 }
 
+/* To disable icon interfarence with button click */
+.fa-heart,
+.fa-trash-can {
+  pointer-events: none;
+}
+
 .close-btn {
   border-radius: 50%;
   height: 1.5rem;
@@ -130,12 +132,7 @@ nav ul {
   float: right;
 }
 
-/* To disable icon interfarence with button click */
-.fa-heart,
-.fa-trash-can {
-  pointer-events: none;
-}
-
+.remove-btn,
 .like-btn {
   position: absolute;
   bottom: 10%;
@@ -151,25 +148,13 @@ nav ul {
   transition: transform 200ms;
 }
 
-.like-btn:hover {
-  transform: scale(1.1);
-}
-
-.remove-btn {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  height: 2rem;
-  width: 2rem;
-  font-size: 16px;
-  font-weight: 900;
-  background: #fff8;
-  border: 1px solid grey;
-  border-radius: 100%;
+.btn-bg-none {
+  background-color: #fff;
+  border: none;
   cursor: pointer;
-  transition: transform 200ms;
 }
 
+.like-btn:hover,
 .remove-btn:hover {
   transform: scale(1.1);
 }
@@ -238,37 +223,53 @@ dialog::backdrop {
   font-weight: 400;
 }
 
-.popup-notification {
+.notifications {
   position: fixed;
+  min-height: 10vh;
+  width: 100%;
   bottom: 5%;
-  right: 5%;
+  right: -75%;
+  pointer-events: none;
 }
 
 .popup-notification {
+  position: relative;
+  right: 5%;
   height: 3rem;
   width: 25%;
+  margin-bottom: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 8px 8px 12px 3px #0008;
   display: grid;
   place-content: center;
-  transition: transform 500ms;
-  /* animation: popup-slide-in ease-in-out 4s; */
+  pointer-events: none;
+  animation: popup-slide-left ease-in-out 1s;
 }
 
-/* @keyframes popup-slide-in {
-  0% {
-    right: -30%;
+.popup-notification.closing {
+  animation: popup-slide-right ease-in-out 1s;
+}
+
+@keyframes popup-slide-left {
+  from {
+    right: -50%;
   }
 
-  50% {
+  to {
+    right: 5%;
+  }
+}
+
+@keyframes popup-slide-right {
+  from {
     right: 5%;
   }
 
-  100% {
-    right: -30%;
+  to {
+    right: -50%;
   }
-} */
+}
 
 /* Change Categories Styles */
 
@@ -306,7 +307,8 @@ dialog::backdrop {
     display: block;
   }
 
-  .gallery {
+  .gallery,
+  .favorites {
     grid-template-columns: 1fr;
   }
 
@@ -339,5 +341,13 @@ dialog::backdrop {
 
   .gallery .card:hover {
     transform: none;
+  }
+
+  .notifications {
+    right: -50%;
+  }
+
+  .popup-notification {
+    width: 50%;
   }
 }

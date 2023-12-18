@@ -21,4 +21,5 @@ export const removeFromFavorite = (id) => {
   const allFavs = getFavsFromLS();
   const filteredFavs = allFavs.filter((item) => item.id !== id);
   localStorage.setItem("favoriteArtifacts", JSON.stringify(filteredFavs));
+  return "Removed!";
 };

@@ -4,7 +4,10 @@ const popUpNotify = (text) => {
   div.innerText = text;
 
   setTimeout(() => {
-    div.remove();
+    div.classList.add("closing");
+    setTimeout(() => {
+      div.remove();
+    }, 1000);
   }, 4000);
 
   return div;

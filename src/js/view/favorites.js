@@ -1,6 +1,7 @@
 import { getFavsFromLS, removeFromFavorite } from "../services/favorites";
 import { getImages } from "../services/unsplash";
 import { renderGallery } from "./gallery";
+import popUpNotify from "./popUpNotify";
 
 const main = document.getElementById("main");
 
@@ -16,7 +17,9 @@ const renderFavorites = (favorites) => {
     .join("");
   main.innerHTML = `
     <nav class="nav-bar">
+    <button class="btn-bg-none" id="logo-btn">
       <h2 class="nav-brand brand-font">Artify</h2>
+    </button>
       <button id="home-btn">
       <i class="fa-solid fa-house"></i> Back To Home
       </button>
@@ -42,9 +45,8 @@ const renderFavorites = (favorites) => {
   favoritesDiv.addEventListener("click", async (evt) => {
     if (evt.target.className === "remove-btn") {
       const id = evt.target.previousSibling.previousSibling.dataset.id;
-      console.log(id);
-      removeFromFavorite(id);
-      renderFavorites(await getFavsFromLS());
+      popUpNotify(removeFromFavorite(id));
+      evt.target.parentNode.remove();
     }
   });
 };

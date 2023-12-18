@@ -31,7 +31,9 @@ export const renderGallery = async (photos) => {
       .join("");
 
   main.innerHTML = `<nav class="nav-bar">
-      <h2 class="nav-brand brand-font">Artify</h2>
+      <button class="btn-bg-none" id="logo-btn">
+        <h2 class="nav-brand brand-font">Artify</h2>
+      </button>
       <button href="#" class="fav-logo">
         <i class="fa-regular fa-heart"></i> Favorites
       </button>
