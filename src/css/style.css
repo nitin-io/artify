@@ -60,9 +60,6 @@ nav ul {
   display: grid;
   place-content: center;
   filter: greyscale(100%);
-  background: url("https://images.unsplash.com/photo-1622542795953-5c26b9d8a135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NDEzMjh8MHwxfGFsbHx8fHx8fHx8fDE3MDI4MjIzNjJ8&ixlib=rb-4.0.3&q=80&w=1080");
-  background-size: cover;
-  background-position: center;
   width: 98%;
   border-radius: 0.5rem;
   margin: auto;
@@ -196,11 +193,14 @@ dialog::backdrop {
   width: 100%;
 }
 
-.dialog-box img {
-  width: 100%;
-  margin: auto;
-  border-radius: 4px;
+.dialog-box > .full-image > img {
+  border-radius: 0.5rem;
   object-fit: contain;
+}
+
+.full-image {
+  height: 540px;
+  width: 780px;
 }
 
 .details {
@@ -252,10 +252,11 @@ dialog::backdrop {
   box-shadow: 8px 8px 12px 3px #0008;
   display: grid;
   place-content: center;
-  animation: popup-slide-in ease-in-out 4s;
+  transition: transform 500ms;
+  /* animation: popup-slide-in ease-in-out 4s; */
 }
 
-@keyframes popup-slide-in {
+/* @keyframes popup-slide-in {
   0% {
     right: -30%;
   }
@@ -267,7 +268,7 @@ dialog::backdrop {
   100% {
     right: -30%;
   }
-}
+} */
 
 /* Change Categories Styles */
 
@@ -319,12 +320,21 @@ dialog::backdrop {
   }
 
   dialog {
-    height: 60vh;
+    height: 95svh;
+  }
+
+  .details {
+    margin-top: 4rem;
   }
 
   .dialog-box {
     grid-template-columns: 1fr;
-    grid-template-rows: 50% 40%;
+    grid-template-rows: 1fr auto;
+  }
+
+  .full-image {
+    height: 250px;
+    width: 320px;
   }
 
   .gallery .card:hover {

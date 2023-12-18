@@ -3,16 +3,19 @@ export const renderDetails = (data) => {
     .map((tag) => (tag.type === "search" ? `<li>${tag.title}</li>` : ""))
     .join("");
 
-  return `<img
+  return `<div class="full-image">
+  <img
         src="${data.urls.regular}"
         alt="${data.alt_description}"
     />
+    </div>
   <div class="details">
   ${
     data.description
       ? `<h4>${data.description}</h4>`
       : "<h4 class='error'>No Description Available</h4>"
   }
+  <hr />
     <span class="title">Tags</span>
     <ul>
       ${tags}
